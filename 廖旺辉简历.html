@@ -1,0 +1,102 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<title>简历</title>
+<style>
+body,ul,li{margin:0; padding:0; font:12px/1.5 arial;} /*,表示和*/
+ul,li{list-style:none;}
+.wrap{width:1000px; margin:20px auto;}/*#对应id  .对应class*/
+.hide{display:none;}
+#tab_t{height:25px;border-bottom:0px solid #ccc;}
+#tab_t li{float:left; width:80px; height:24px; line-height:24px; margin:0 40px; text-align:center; border:0px solid #ccc; border-bottom:none; background:#f5f5f5; cursor:pointer;}
+#tab_t .act{ position:relative; height:25px; margin-bottom:-1px; background:#fff;}
+/*空格表示在之下*/
+#tab_c{ solid #ccc; border-top:none; padding:20px;height:500px;font-size:18px;}
+.c1 {font-size: 20px;color: black;}
+.c2 {font-size: 18px;color: black}
+.td{height:40px;}
+</style>
+<script>
+window.onload = function(){
+
+    tab("tab_t","li","tab_c","div","onmouseover")
+    function tab(tab_t,tab_t_tag,tab_c,tag_c_tag,evt){
+        var tab_t = document.getElementById(tab_t);/*返回tab_t对象*/
+        var tab_t_li = tab_t.getElementsByTagName(tab_t_tag);/*返回li数组*/
+        var tab_c = document.getElementById(tab_c);
+        var tab_c_li = tab_c.getElementsByTagName(tag_c_tag);
+        var len = tab_t_li.length;/*选项卡的个数*/
+        var i=0;
+        for(i=0; i<len; i++){
+            tab_t_li[i].index = i;/*选项卡数组*/
+            tab_t_li[i][evt] = function(){ /*每个选项卡注册事件*/
+                for(i=0; i<len; i++){/*隐藏所有的DIV*/
+                    tab_t_li[i].className = '';
+                    tab_c_li[i].className = 'hide';
+                }
+                tab_t_li[this.index].className = 'act';
+                tab_c_li[this.index].className = '';/*显示选中的DIV*/
+            }
+        }
+    }
+    
+}
+</script>
+</head>
+
+<body>
+
+<div class="wrap">
+  <ul id="tab_t">
+    <li class="act">基本信息</li>
+    <li>自我评价</li>
+   </ul>
+<div id="tab_c">
+<div>
+<table  border="1" align="left">
+<tr>
+<td width="160"><font class="c1">姓名：</font></td>
+<td width="200"><font class="c2">廖旺辉</font></td>
+<td width="160"><font class="c1">性别：</font></td>
+<td width="200"><font class="c2">男</font></td>
+</tr>
+
+<tr>
+<td><font class="c1">出生年月：</font></td>
+<td><font class="c2">1994.02.01</font></td>
+<td><font class="c1">籍贯：</font></td>
+<td><font class="c2">梅州兴宁</font></td>
+</tr>
+
+<tr>
+<td><font class="c1">年级专业：</font></td>
+<td><font class="c2">大二软件工程</font></td>
+<td><font class="c1">联系电话：</font></td>
+<td><font class="c2">18813752489 672489</font></td>
+</tr>
+
+<tr>
+<td><font class="c1">QQ：</font></td>
+<td><font class="c2">791445109</font></td>
+<td><font class="c1">e-mail：</font></td>
+<td><font class="c2">791445109@qq.com</font></td>
+</tr>
+
+<tr>
+<td><font class="c1">加入红满堂工作室的原因：</font></td>
+<td colspan="4"><font class="c2">成为一个更好的自己</font></td>
+</tr>
+</table>
+</div>
+
+<div class="hide">
+既然这份简历是考验编程能力，那么我就简单说一下自己的情况吧，我对HTML/CSS有大概的了解，但是对实际的运用还处于
+摸索阶段，还不能灵活运用。虽然没接触过Javascript，但我目前在学习中。在JAVA语言方面有一定的基础，还没接触过PHP语言，但是有学习的想法。
+对前端和后台开发比较有兴趣。希望红满堂能给我一个机会，我会尽自己的能力去学习。<br/>
+P.S因为能力有限，这份简历不是完全原创，部分参考了网上的代码。
+</div>
+   
+  </div>
+</div>  
